@@ -1,5 +1,3 @@
-# vantan-202206-special-lecture-tseigo-api-for-1st-year-student
-
-1st-year-student
+# バンタンゲームアカデミー 田中正吾 特別授業 【1年生向け】
 
 README
