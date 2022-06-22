@@ -7,4 +7,4 @@
 - [API から柴犬画像を表示](04-shibainu-image-tile.md)
 - [API を旅してみよう](05-api-tour.md)
 - [API と何かをつくるときの TIPS](06-api-tips.md)
-- [ディスカッション](07-extra-discussion.md)
+- [事例紹介・質疑応答](07-extra-discussion.md)
