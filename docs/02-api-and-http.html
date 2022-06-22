@@ -10,7 +10,7 @@
         <meta property="og:title" content="バンタンゲームアカデミー 田中正吾 特別授業 【1年生向け】">
         <meta property="og:description" content="詳細説明">
         <meta property="og:locale" content="ja">
-        <title>API について · バンタンゲームアカデミー 田中正吾 特別授業 【1年生向け】</title>
+        <title>API で大切な HTTP · バンタンゲームアカデミー 田中正吾 特別授業 【1年生向け】</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="HonKit 3.7.3">
@@ -75,6 +75,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="03-getting-shibainu-api.html" />
+    
     
     <link rel="prev" href="01-getting-started.html" />
     
@@ -123,7 +125,7 @@
                 <a href="01-getting-started.html">
             
                     
-                    はじめに
+                    はじめに、そしてAPI
             
                 </a>
             
@@ -136,7 +138,7 @@
                 <a href="02-api-and-http.html">
             
                     
-                    API について
+                    API で大切な HTTP
             
                 </a>
             
@@ -144,23 +146,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4" >
+        <li class="chapter " data-level="1.4" data-path="03-getting-shibainu-api.html">
             
-                <span>
-            
-                    
-                    柴犬画像 API
-            
-                </span>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.4.1" data-path="04-getting-shibainu-api.html">
-            
-                <a href="04-getting-shibainu-api.html">
+                <a href="03-getting-shibainu-api.html">
             
                     
                     柴犬画像 API につなぐ
@@ -171,12 +159,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="05-shibainu-image-tile.html">
+        <li class="chapter " data-level="1.5" data-path="04-shibainu-image-tile.html">
             
-                <a href="05-shibainu-image-tile.html">
+                <a href="04-shibainu-image-tile.html">
             
                     
-                    柴犬画像を表示
+                    API から柴犬画像を表示
             
                 </a>
             
@@ -184,8 +172,42 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6" data-path="05-api-tour.html">
+            
+                <a href="05-api-tour.html">
+            
+                    
+                    API を旅してみよう
+            
+                </a>
+            
 
-            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="06-api-tips.html">
+            
+                <a href="06-api-tips.html">
+            
+                    
+                    API と何かをつくるときの TIPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="07-extra-discussion.html">
+            
+                <a href="07-extra-discussion.html">
+            
+                    
+                    ディスカッション
+            
+                </a>
+            
+
             
         </li>
     
@@ -219,7 +241,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >API について</a>
+        <a href="." >API で大切な HTTP</a>
     </h1>
 </div>
 
@@ -234,7 +256,79 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h1 id="api-で大切な-http"><a name="api-で大切な-http" class="plugin-anchor" href="#api-で大切な-http"><i class="fa fa-link" aria-hidden="true"></i></a>API で大切な HTTP</h1>
+<h2 id="api-の多くは-http-プロトコルでできている"><a name="api-の多くは-http-プロトコルでできている" class="plugin-anchor" href="#api-の多くは-http-プロトコルでできている"><i class="fa fa-link" aria-hidden="true"></i></a>API の多くは HTTP プロトコルでできている</h2>
+<h2 id="http-について"><a name="http-について" class="plugin-anchor" href="#http-について"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP について</h2>
+<p>HTTP プロトコルについて概要を把握します。</p>
+<p>HTTP は Hypertext Transfer Protocol という正式名称です。 Web ブラウザが Web サーバと通信する際に主として使用する通信プロトコルです。</p>
+<p>よくある例としては、みなさんが Web ブラウザからアドレスバーで URL を入力して HTML などのテキストによって記述された Web ページなどのコンテンツを表示するときのデータの送受信に用いられます。</p>
+<p>参考文献</p>
+<ul>
+<li>Hypertext Transfer Protocol - Wikipedia<ul>
+<li><a href="https://ja.wikipedia.org/wiki/Hypertext_Transfer_Protocol" target="_blank">https://ja.wikipedia.org/wiki/Hypertext_Transfer_Protocol</a></li>
+</ul>
+</li>
+<li>HTTP の基本 - HTTP | MDN<ul>
+<li><a href="https://developer.mozilla.org/ja/docs/Web/HTTP/Basics_of_HTTP" target="_blank">https://developer.mozilla.org/ja/docs/Web/HTTP/Basics_of_HTTP</a></li>
+</ul>
+</li>
+</ul>
+<p>実際には、このような仕組みになっています。</p>
+<blockquote>
+<p>HTTPはリクエスト-レスポンス型のプロトコルであり、クライアントがサーバにリクエストメッセージを送信する。 基本的な考え方は非常に単純で、「何を」「どうして」欲しいのかを伝える。URLが「何を」、メソッドが「どうして」に当たる。 サーバはこれにレスポンスメッセージを返し、基本的にこの時点で初期状態に戻る。つまり、サーバはクライアントの状態を保存しない。</p>
+<p>Hypertext Transfer Protocol - Wikipedia - <a href="https://ja.wikipedia.org/wiki/Hypertext_Transfer_Protocol" target="_blank">https://ja.wikipedia.org/wiki/Hypertext_Transfer_Protocol</a></p>
+</blockquote>
+<p>この説明は、仕様をちゃんと説明してはいるのですが、ちょっととっつきにくいかもしれません。もう少し、噛み砕いていきましょう。</p>
+<p><img src="https://i.gyazo.com/8d8b5bcd165aa9851160c0aeac32169d.png" alt="image"></p>
+<p>こちらの図を見つつ、<a href="https://developer.mozilla.org/ja/docs/Web/HTTP/Session" target="_blank">典型的な HTTP セッション</a> を追っていきます。</p>
+<p>まず、クライアントからサーバーへ URL で「何か」決めて問い合わせます。また、HTTP ヘッダーでクライアントからサーバーが追加情報を渡すことができます。</p>
+<ul>
+<li>HTTP メソッド<ul>
+<li>リソースに対して実行したいアクションを宣言します。いろいろありますが GET と POST を使うことが多いです。</li>
+<li><a href="https://developer.mozilla.org/ja/docs/Web/HTTP/Headers" target="_blank">https://developer.mozilla.org/ja/docs/Web/HTTP/Headers</a></li>
+</ul>
+</li>
+<li>HTTP ヘッダー<ul>
+<li>HTTP リクエストやレスポンスでクライアントやサーバーが追加情報を渡すことができます</li>
+<li><a href="https://developer.mozilla.org/ja/docs/Web/HTTP/Headers" target="_blank">https://developer.mozilla.org/ja/docs/Web/HTTP/Headers</a></li>
+</ul>
+</li>
+</ul>
+<p><img src="https://i.gyazo.com/03d1c316f872a525a4bb30e7fffa412a.png" alt="image"></p>
+<p>そして、サーバーが HTTP リクエストから受け取った内容で、今度は HTTP レスポンスという形で応答します。こちらの図を見つつ、<a href="https://developer.mozilla.org/ja/docs/Web/HTTP/Session" target="_blank">典型的な HTTP セッション</a> を追っていきます。</p>
+<p>まず、HTTP ヘッダーでサーバーからクライアントへ追加情報を渡すことができます。そして、HTTP 応答ステータスコードで正常に完了したどうかを伝えます。こちらを、みなさんのブラウザが受信すると Web ページが表示されます。</p>
+<ul>
+<li>HTTP 応答ステータスコード（HTTP レスポンスステータスコード）<ul>
+<li>特定の HTTP リクエストが正常に完了したどうかを示します。200 が Success で応答成功です。その他に、有名なものとして 404 , 500 , 503 などがあります。</li>
+<li>404 Not Found<ul>
+<li>サーバーがリクエストされたリソースを発見できないこと</li>
+</ul>
+</li>
+<li>500 Internal Server Error<ul>
+<li>サーバー側で処理方法がわからない事態が発生したことを示します。</li>
+</ul>
+</li>
+<li>503 Service Unavailable<ul>
+<li>サーバーはリクエストを処理する準備ができていないことを示します。</li>
+</ul>
+</li>
+<li>参考文献（一覧はこちら）<ul>
+<li><a href="https://developer.mozilla.org/ja/docs/Web/HTTP/Status" target="_blank">https://developer.mozilla.org/ja/docs/Web/HTTP/Status</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>全体の図としては以下の通りです。</p>
+<p><img src="https://i.gyazo.com/6052386b6f5bdf2b17b7692149fd2d92.png" alt="image"></p>
+<p>本来、みなさんのブラウザで URL にアクセスして何かしらが表示されるまでには、このような流れで行われています。いろいろありますね。</p>
+<p>ですが、いま、すべて覚える必要はないです。 HTTP プロトコルを扱うために、ざっくりこのような流れになっているんだなと理解できていれば OK です。</p>
+<p>雰囲気での理解は、あとで生きてきます！</p>
+<h2 id="unity-における-http"><a name="unity-における-http" class="plugin-anchor" href="#unity-における-http"><i class="fa fa-link" aria-hidden="true"></i></a>Unity における HTTP</h2>
+<h2 id="今回は-http-get-で-1-点突破します"><a name="今回は-http-get-で-1-点突破します" class="plugin-anchor" href="#今回は-http-get-で-1-点突破します"><i class="fa fa-link" aria-hidden="true"></i></a>今回は HTTP GET で 1 点突破します</h2>
+<p>次の章では、ブラウザで表示して確認もできる GET リクエストの API でサッと試してみます。</p>
+<p>柴犬画像をランダムで表示する API に Unity からつなぎます。</p>
+
                                 
                                 </section>
                             
@@ -261,10 +355,14 @@
 
             
                 
-                <a href="01-getting-started.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: はじめに">
+                <a href="01-getting-started.html" class="navigation navigation-prev " aria-label="Previous page: はじめに、そしてAPI">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="03-getting-shibainu-api.html" class="navigation navigation-next " aria-label="Next page: 柴犬画像 API につなぐ">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -273,7 +371,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"API について","level":"1.3","depth":1,"next":{"title":"柴犬画像 API","level":"1.4","depth":1,"ref":"","articles":[{"title":"柴犬画像 API につなぐ","level":"1.4.1","depth":2,"path":"04-getting-shibainu-api.md","ref":"04-getting-shibainu-api.md","articles":[]},{"title":"柴犬画像を表示","level":"1.4.2","depth":2,"path":"05-shibainu-image-tile.md","ref":"05-shibainu-image-tile.md","articles":[]}]},"previous":{"title":"はじめに","level":"1.2","depth":1,"path":"01-getting-started.md","ref":"01-getting-started.md","articles":[]},"dir":"neutral"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"バンタンゲームアカデミー 田中正吾 特別授業 【1年生向け】","language":"ja","gitbook":"*","description":"詳細説明"},"file":{"path":"02-api-and-http.md","mtime":"2022-06-21T14:20:46.742Z","type":"markdown"},"gitbook":{"version":"3.7.3","time":"2022-06-21T14:44:12.535Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"API で大切な HTTP","level":"1.3","depth":1,"next":{"title":"柴犬画像 API につなぐ","level":"1.4","depth":1,"path":"03-getting-shibainu-api.md","ref":"03-getting-shibainu-api.md","articles":[]},"previous":{"title":"はじめに、そしてAPI","level":"1.2","depth":1,"path":"01-getting-started.md","ref":"01-getting-started.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"バンタンゲームアカデミー 田中正吾 特別授業 【1年生向け】","language":"ja","gitbook":"*","description":"詳細説明"},"file":{"path":"02-api-and-http.md","mtime":"2022-06-22T02:02:25.734Z","type":"markdown"},"gitbook":{"version":"3.7.3","time":"2022-06-22T02:02:29.862Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
