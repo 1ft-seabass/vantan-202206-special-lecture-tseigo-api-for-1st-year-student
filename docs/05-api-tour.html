@@ -112,7 +112,7 @@
                 <a href="./">
             
                     
-                    Introduction
+                    README
             
                 </a>
             
@@ -257,6 +257,57 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="api-を旅してみよう"><a name="api-を旅してみよう" class="plugin-anchor" href="#api-を旅してみよう"><i class="fa fa-link" aria-hidden="true"></i></a>API を旅してみよう</h1>
+<p><img src="https://i.gyazo.com/ca62ef1b64e4d0b133bfe8491b36d000.png" alt="image"></p>
+<p>API との接続を、柴犬画像 API をひとまずためしてみました。</p>
+<p>私がまとめたこの図のように API にはこのような広がりがあります。</p>
+<p><img src="https://i.gyazo.com/b3c1f4c2b1625cba88d3e862fcb7570e.png" alt="image"></p>
+<p>フリーのAPIのリストコレクション <a href="https://github.com/public-apis/public-apis" target="_blank">public-apis</a> をご紹介します。</p>
+<ul>
+<li>public-apis<ul>
+<li><a href="https://github.com/public-apis/public-apis" target="_blank">https://github.com/public-apis/public-apis</a></li>
+</ul>
+</li>
+</ul>
+<p>英語ですが、実に 100 以上の API があり見ているだけで楽しいです。しかも定期的にメンテナンスされています。実は柴犬画像 API もこの中で紹介されているもののひとつです。</p>
+<p><img src="https://i.gyazo.com/9605a51706aeac4dfbe3143a13397207.png" alt="image"></p>
+<p>各 API では</p>
+<ul>
+<li>Auth<ul>
+<li>使うために認証が必要か</li>
+<li>ないものは特別のユーザー登録が必要なく柴犬画像 API のような使いやすいリクエスト GET リクエストでアクセスできたりする</li>
+</ul>
+</li>
+<li>HTTPS<ul>
+<li>セキュアな通信でつながるか</li>
+</ul>
+</li>
+<li>CORS<ul>
+<li>クロスドメイン制約（ドメインの違うところからのアクセスに関する制約）がないか</li>
+</ul>
+</li>
+</ul>
+<p>という項目で、使い方がザっと把握できます。</p>
+<p>以下の点を注目しておくと使いやすいものを探せるでしょう。</p>
+<ul>
+<li>Auth<ul>
+<li>No のものは特別のユーザー登録が必要なく柴犬画像 API のような使いやすいリクエスト GET リクエストでアクセスできたりする</li>
+</ul>
+</li>
+<li>CORS<ul>
+<li>ブラウザでのクロスドメイン制約（ドメインの違うところからのアクセスに関する制約）がないか</li>
+<li>ないとアクセスしやすい。Unity 単体でのアクセスであれば気にしなくてよい。</li>
+</ul>
+</li>
+</ul>
+<p>ということで、</p>
+<p><img src="https://i.gyazo.com/72e0eee127c60dc5d51544f642d70b7b.png" alt="image"></p>
+<p>いろいろな API を紹介していきます！</p>
+<p>今回紹介した API たちのように、すぐに作れるツールやアプローチを知っていることで、よりつくるためのアイデアが増えていくので、手を動かしつつ技術に触れつつ、鍛えていきましょう。</p>
+<h2 id="質疑応答"><a name="質疑応答" class="plugin-anchor" href="#質疑応答"><i class="fa fa-link" aria-hidden="true"></i></a>質疑応答</h2>
+<p><img src="https://i.gyazo.com/aba8ccd625e7320883851b71ebd0caf2.png" alt="image"></p>
+<p>ここまでで質問があればどうぞ！</p>
+<h2 id="次にすすみましょう"><a name="次にすすみましょう" class="plugin-anchor" href="#次にすすみましょう"><i class="fa fa-link" aria-hidden="true"></i></a>次にすすみましょう</h2>
+<p>左のナビゲーションから「API と何かをつくるときの TIPS」にすすみましょう。</p>
 
                                 
                                 </section>
@@ -300,7 +351,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"API を旅してみよう","level":"1.6","depth":1,"next":{"title":"API と何かをつくるときの TIPS","level":"1.7","depth":1,"path":"06-api-tips.md","ref":"06-api-tips.md","articles":[]},"previous":{"title":"API から柴犬画像を表示","level":"1.5","depth":1,"path":"04-shibainu-image-tile.md","ref":"04-shibainu-image-tile.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"バンタンゲームアカデミー 田中正吾 特別授業 【1年生向け】","language":"ja","gitbook":"*","description":"詳細説明"},"file":{"path":"05-api-tour.md","mtime":"2022-06-22T01:56:27.597Z","type":"markdown"},"gitbook":{"version":"3.7.3","time":"2022-06-22T02:02:29.862Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"API を旅してみよう","level":"1.6","depth":1,"next":{"title":"API と何かをつくるときの TIPS","level":"1.7","depth":1,"path":"06-api-tips.md","ref":"06-api-tips.md","articles":[]},"previous":{"title":"API から柴犬画像を表示","level":"1.5","depth":1,"path":"04-shibainu-image-tile.md","ref":"04-shibainu-image-tile.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"バンタンゲームアカデミー 田中正吾 特別授業 【1年生向け】","language":"ja","gitbook":"*","description":"詳細説明"},"file":{"path":"05-api-tour.md","mtime":"2022-06-22T07:39:04.418Z","type":"markdown"},"gitbook":{"version":"3.7.3","time":"2022-06-22T08:00:04.236Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

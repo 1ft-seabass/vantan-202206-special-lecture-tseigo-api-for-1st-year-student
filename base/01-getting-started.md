@@ -119,4 +119,12 @@ API とは、 Application Programming Interface の頭文字です。データ�
 
 というところも後半にやってみる予定です。
 
-## 
+## 質疑応答
+
+![image](https://i.gyazo.com/aba8ccd625e7320883851b71ebd0caf2.png)
+
+ここまでで質問があればどうぞ！
+
+## 次にすすみましょう
+
+左のナビゲーションから「API で大切な HTTP」にすすみましょう。

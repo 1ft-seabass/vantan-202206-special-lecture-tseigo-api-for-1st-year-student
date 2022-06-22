@@ -112,7 +112,7 @@
                 <a href="./">
             
                     
-                    Introduction
+                    README
             
                 </a>
             
@@ -257,17 +257,32 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="柴犬画像-api-につなぐ"><a name="柴犬画像-api-につなぐ" class="plugin-anchor" href="#柴犬画像-api-につなぐ"><i class="fa fa-link" aria-hidden="true"></i></a>柴犬画像 API につなぐ</h1>
-<h2 id="想定開発環境"><a name="想定開発環境" class="plugin-anchor" href="#想定開発環境"><i class="fa fa-link" aria-hidden="true"></i></a>想定開発環境</h2>
+<h2 id="開発環境"><a name="開発環境" class="plugin-anchor" href="#開発環境"><i class="fa fa-link" aria-hidden="true"></i></a>開発環境</h2>
 <ul>
 <li>Unity は 2019.4 台</li>
 <li>スクリプトのエディタは Visual Studio</li>
 </ul>
 <p>で、すすめます。</p>
-<h2 id="unity-で-http-をつなげる文献"><a name="unity-で-http-をつなげる文献" class="plugin-anchor" href="#unity-で-http-をつなげる文献"><i class="fa fa-link" aria-hidden="true"></i></a>Unity で HTTP をつなげる文献</h2>
-<p>共通操作 - HLAPI の使用 - Unity マニュアル
-<a href="https://docs.unity3d.com/ja/2019.4/Manual/UnityWebRequest-HLAPI.html" target="_blank">https://docs.unity3d.com/ja/2019.4/Manual/UnityWebRequest-HLAPI.html</a></p>
-<p>HTTP サーバーからテキストやバイナリデータを取得 (GET) - Unity マニュアル
-<a href="https://docs.unity3d.com/ja/2019.4/Manual/UnityWebRequest-RetrievingTextBinaryData.html" target="_blank">https://docs.unity3d.com/ja/2019.4/Manual/UnityWebRequest-RetrievingTextBinaryData.html</a></p>
+<h2 id="今回の-api"><a name="今回の-api" class="plugin-anchor" href="#今回の-api"><i class="fa fa-link" aria-hidden="true"></i></a>今回の API</h2>
+<p>かわいい柴犬画像をランダムに返答してくれる shibe.online という API を使ってみましょう。</p>
+<p><img src="https://i.gyazo.com/ffdaa58d8fb284e2d0095d4ba8f60d8b.png" alt="image"></p>
+<p><a href="https://shibe.online/" target="_blank">https://shibe.online/</a> こちらです。</p>
+<p>HTTP リクエストの仕様として読み解くと以下のようになります。</p>
+<ul>
+<li>HTTP リクエスト方法<ul>
+<li>GET メソッド</li>
+</ul>
+</li>
+<li>アクセスする API の URL<ul>
+<li><a href="http://shibe.online/api/shibes" target="_blank">http://shibe.online/api/shibes</a></li>
+</ul>
+</li>
+<li>3 つの柴犬画像を取得する場合のパラメータ付き URL<ul>
+<li><a href="http://shibe.online/api/shibes?count=3&amp;urls=true&amp;httpsUrls=true" target="_blank">http://shibe.online/api/shibes?count=3&amp;urls=true&amp;httpsUrls=true</a></li>
+</ul>
+</li>
+</ul>
+<p>これのみです。追加で設定すべきパラメータもなく、これは、GET リクエストのためブラウザからアクセスでき、とても扱いやすい API です。</p>
 <h2 id="unity-hub-で新しいプロジェクト"><a name="unity-hub-で新しいプロジェクト" class="plugin-anchor" href="#unity-hub-で新しいプロジェクト"><i class="fa fa-link" aria-hidden="true"></i></a>Unity Hub で新しいプロジェクト</h2>
 <p><img src="https://i.gyazo.com/66d21dad134c483d99e51b56010f2028.png" alt="image"></p>
 <p>Unity Hub で新しいプロジェクトボタンをクリックします。</p>
@@ -387,7 +402,12 @@
 <p><img src="https://i.gyazo.com/7ec52a53d8ae79b3906d6fa26d8e991e.jpg" alt="image"></p>
 <p>このように、画像が取得できます</p>
 <h2 id="shibainuapiloader-プログラムの解説"><a name="shibainuapiloader-プログラムの解説" class="plugin-anchor" href="#shibainuapiloader-プログラムの解説"><i class="fa fa-link" aria-hidden="true"></i></a>ShibainuAPILoader プログラムの解説</h2>
-<h2 id><a name class="plugin-anchor" href="#"><i class="fa fa-link" aria-hidden="true"></i></a> </h2>
+<p>TODO : ShibainuAPILoader プログラムの解説</p>
+<h2 id="質疑応答"><a name="質疑応答" class="plugin-anchor" href="#質疑応答"><i class="fa fa-link" aria-hidden="true"></i></a>質疑応答</h2>
+<p><img src="https://i.gyazo.com/aba8ccd625e7320883851b71ebd0caf2.png" alt="image"></p>
+<p>ここまでで質問があればどうぞ！</p>
+<h2 id="次にすすみましょう"><a name="次にすすみましょう" class="plugin-anchor" href="#次にすすみましょう"><i class="fa fa-link" aria-hidden="true"></i></a>次にすすみましょう</h2>
+<p>左のナビゲーションから「API から柴犬画像を表示」にすすみましょう。</p>
 
                                 
                                 </section>
@@ -431,7 +451,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"柴犬画像 API につなぐ","level":"1.4","depth":1,"next":{"title":"API から柴犬画像を表示","level":"1.5","depth":1,"path":"04-shibainu-image-tile.md","ref":"04-shibainu-image-tile.md","articles":[]},"previous":{"title":"API で大切な HTTP","level":"1.3","depth":1,"path":"02-api-and-http.md","ref":"02-api-and-http.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"バンタンゲームアカデミー 田中正吾 特別授業 【1年生向け】","language":"ja","gitbook":"*","description":"詳細説明"},"file":{"path":"03-getting-shibainu-api.md","mtime":"2022-06-22T01:56:10.995Z","type":"markdown"},"gitbook":{"version":"3.7.3","time":"2022-06-22T02:02:29.862Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"柴犬画像 API につなぐ","level":"1.4","depth":1,"next":{"title":"API から柴犬画像を表示","level":"1.5","depth":1,"path":"04-shibainu-image-tile.md","ref":"04-shibainu-image-tile.md","articles":[]},"previous":{"title":"API で大切な HTTP","level":"1.3","depth":1,"path":"02-api-and-http.md","ref":"02-api-and-http.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"バンタンゲームアカデミー 田中正吾 特別授業 【1年生向け】","language":"ja","gitbook":"*","description":"詳細説明"},"file":{"path":"03-getting-shibainu-api.md","mtime":"2022-06-22T07:39:54.159Z","type":"markdown"},"gitbook":{"version":"3.7.3","time":"2022-06-22T08:00:04.236Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

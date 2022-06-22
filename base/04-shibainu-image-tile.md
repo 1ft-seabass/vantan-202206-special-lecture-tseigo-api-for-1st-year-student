@@ -140,4 +140,18 @@ public class ShibainuAPILoader : MonoBehaviour
 
 ## 加わったスクリプトの解説
 
+TODO : 加わったスクリプトの解説
+
 ## Plane を 2 枚増やしてみる
+
+TODO : Plane を 2 枚増やしてみる
+
+## 質疑応答
+
+![image](https://i.gyazo.com/aba8ccd625e7320883851b71ebd0caf2.png)
+
+ここまでで質問があればどうぞ！
+
+## 次にすすみましょう
+
+左のナビゲーションから「API を旅してみよう」にすすみましょう。

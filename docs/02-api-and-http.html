@@ -112,7 +112,7 @@
                 <a href="./">
             
                     
-                    Introduction
+                    README
             
                 </a>
             
@@ -258,6 +258,8 @@
                                 
                                 <h1 id="api-で大切な-http"><a name="api-で大切な-http" class="plugin-anchor" href="#api-で大切な-http"><i class="fa fa-link" aria-hidden="true"></i></a>API で大切な HTTP</h1>
 <h2 id="api-の多くは-http-プロトコルでできている"><a name="api-の多くは-http-プロトコルでできている" class="plugin-anchor" href="#api-の多くは-http-プロトコルでできている"><i class="fa fa-link" aria-hidden="true"></i></a>API の多くは HTTP プロトコルでできている</h2>
+<p><img src="https://i.gyazo.com/f3373e4309a09576ba9ec8acce8a57c7.png" alt="image"></p>
+<p>API の多くは HTTP プロトコルで構成されています。ですので、API を扱うときに読み解くために HTTP の仕組みを覚えておくと、実際に API を使いたいときに、ライブラリの力を借りずに、素の HTTP　通信でやりとりできるようになるので、幅が広がります。</p>
 <h2 id="http-について"><a name="http-について" class="plugin-anchor" href="#http-について"><i class="fa fa-link" aria-hidden="true"></i></a>HTTP について</h2>
 <p>HTTP プロトコルについて概要を把握します。</p>
 <p>HTTP は Hypertext Transfer Protocol という正式名称です。 Web ブラウザが Web サーバと通信する際に主として使用する通信プロトコルです。</p>
@@ -325,9 +327,56 @@
 <p>ですが、いま、すべて覚える必要はないです。 HTTP プロトコルを扱うために、ざっくりこのような流れになっているんだなと理解できていれば OK です。</p>
 <p>雰囲気での理解は、あとで生きてきます！</p>
 <h2 id="unity-における-http"><a name="unity-における-http" class="plugin-anchor" href="#unity-における-http"><i class="fa fa-link" aria-hidden="true"></i></a>Unity における HTTP</h2>
-<h2 id="今回は-http-get-で-1-点突破します"><a name="今回は-http-get-で-1-点突破します" class="plugin-anchor" href="#今回は-http-get-で-1-点突破します"><i class="fa fa-link" aria-hidden="true"></i></a>今回は HTTP GET で 1 点突破します</h2>
+<h3 id="unity-でつなげる公式ドキュメント"><a name="unity-でつなげる公式ドキュメント" class="plugin-anchor" href="#unity-でつなげる公式ドキュメント"><i class="fa fa-link" aria-hidden="true"></i></a>Unity でつなげる公式ドキュメント</h3>
+<ul>
+<li>共通操作 - HLAPI の使用 - Unity マニュアル<ul>
+<li><a href="https://docs.unity3d.com/ja/2019.4/Manual/UnityWebRequest-HLAPI.html" target="_blank">https://docs.unity3d.com/ja/2019.4/Manual/UnityWebRequest-HLAPI.html</a></li>
+</ul>
+</li>
+</ul>
+<p>こちらに文献があります。</p>
+<h3 id="メジャーな-get-と-post-リクエストの文献"><a name="メジャーな-get-と-post-リクエストの文献" class="plugin-anchor" href="#メジャーな-get-と-post-リクエストの文献"><i class="fa fa-link" aria-hidden="true"></i></a>メジャーな GET と POST リクエストの文献</h3>
+<p>GET リクエスト</p>
+<ul>
+<li>HTTP サーバーからテキストやバイナリデータを取得 (GET) - Unity マニュアル<ul>
+<li><a href="https://docs.unity3d.com/ja/2019.4/Manual/UnityWebRequest-RetrievingTextBinaryData.html" target="_blank">https://docs.unity3d.com/ja/2019.4/Manual/UnityWebRequest-RetrievingTextBinaryData.html</a></li>
+</ul>
+</li>
+</ul>
+<p>POST リクエスト例</p>
+<ul>
+<li>HTTP サーバーにフォームを送信 (POST) - Unity マニュアル<ul>
+<li><a href="https://docs.unity3d.com/ja/2019.4/Manual/UnityWebRequest-SendingForm.html" target="_blank">https://docs.unity3d.com/ja/2019.4/Manual/UnityWebRequest-SendingForm.html</a></li>
+<li>参考にはなるが、最近のユースケースでは、必ずしもフォームでデータをやり取りするわけではないです</li>
+</ul>
+</li>
+<li>【Unity】UnityWebRequest で JSON を POST 通信するサンプル - コガネブログ<ul>
+<li><a href="https://baba-s.hatenablog.com/entry/2020/11/16/080000_9" target="_blank">https://baba-s.hatenablog.com/entry/2020/11/16/080000_9</a></li>
+<li>JSON データを送るところではこちらのほうが参考になります</li>
+</ul>
+</li>
+</ul>
+<h3 id="json-データの送信や受け取ったデータの-json-解析は-jsonutility"><a name="json-データの送信や受け取ったデータの-json-解析は-jsonutility" class="plugin-anchor" href="#json-データの送信や受け取ったデータの-json-解析は-jsonutility"><i class="fa fa-link" aria-hidden="true"></i></a>JSON データの送信や受け取ったデータの JSON 解析は JsonUtility</h3>
+<p>JSON データの送信や受け取ったデータの JSON 解析は、Unity でビルドインされている JsonUtility が便利です。</p>
+<ul>
+<li>JsonUtility-FromJson - Unity スクリプトリファレンス<ul>
+<li><a href="https://docs.unity3d.com/ja/2018.4/ScriptReference/JsonUtility.FromJson.html" target="_blank">https://docs.unity3d.com/ja/2018.4/ScriptReference/JsonUtility.FromJson.html</a></li>
+</ul>
+</li>
+<li>JsonUtility-ToJson - Unity スクリプトリファレンス<ul>
+<li><a href="https://docs.unity3d.com/ja/2018.4/ScriptReference/JsonUtility.ToJson.html" target="_blank">https://docs.unity3d.com/ja/2018.4/ScriptReference/JsonUtility.ToJson.html</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="今回は-http-get-で一点突破します"><a name="今回は-http-get-で一点突破します" class="plugin-anchor" href="#今回は-http-get-で一点突破します"><i class="fa fa-link" aria-hidden="true"></i></a>今回は HTTP GET で一点突破します</h2>
+<p><img src="https://i.gyazo.com/d0f4ebb4d8d3c8988055d12191971876.png" alt="image"></p>
 <p>次の章では、ブラウザで表示して確認もできる GET リクエストの API でサッと試してみます。</p>
 <p>柴犬画像をランダムで表示する API に Unity からつなぎます。</p>
+<h2 id="質疑応答"><a name="質疑応答" class="plugin-anchor" href="#質疑応答"><i class="fa fa-link" aria-hidden="true"></i></a>質疑応答</h2>
+<p><img src="https://i.gyazo.com/aba8ccd625e7320883851b71ebd0caf2.png" alt="image"></p>
+<p>ここまでで質問があればどうぞ！</p>
+<h2 id="次にすすみましょう"><a name="次にすすみましょう" class="plugin-anchor" href="#次にすすみましょう"><i class="fa fa-link" aria-hidden="true"></i></a>次にすすみましょう</h2>
+<p>左のナビゲーションから「柴犬画像 API につなぐ」にすすみましょう。</p>
 
                                 
                                 </section>
@@ -371,7 +420,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"API で大切な HTTP","level":"1.3","depth":1,"next":{"title":"柴犬画像 API につなぐ","level":"1.4","depth":1,"path":"03-getting-shibainu-api.md","ref":"03-getting-shibainu-api.md","articles":[]},"previous":{"title":"はじめに、そしてAPI","level":"1.2","depth":1,"path":"01-getting-started.md","ref":"01-getting-started.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"バンタンゲームアカデミー 田中正吾 特別授業 【1年生向け】","language":"ja","gitbook":"*","description":"詳細説明"},"file":{"path":"02-api-and-http.md","mtime":"2022-06-22T02:02:25.734Z","type":"markdown"},"gitbook":{"version":"3.7.3","time":"2022-06-22T02:02:29.862Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"API で大切な HTTP","level":"1.3","depth":1,"next":{"title":"柴犬画像 API につなぐ","level":"1.4","depth":1,"path":"03-getting-shibainu-api.md","ref":"03-getting-shibainu-api.md","articles":[]},"previous":{"title":"はじめに、そしてAPI","level":"1.2","depth":1,"path":"01-getting-started.md","ref":"01-getting-started.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"バンタンゲームアカデミー 田中正吾 特別授業 【1年生向け】","language":"ja","gitbook":"*","description":"詳細説明"},"file":{"path":"02-api-and-http.md","mtime":"2022-06-22T07:40:00.491Z","type":"markdown"},"gitbook":{"version":"3.7.3","time":"2022-06-22T08:00:04.236Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

@@ -112,7 +112,7 @@
                 <a href="./">
             
                     
-                    Introduction
+                    README
             
                 </a>
             
@@ -257,6 +257,29 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="api-と何かをつくるときの-tips"><a name="api-と何かをつくるときの-tips" class="plugin-anchor" href="#api-と何かをつくるときの-tips"><i class="fa fa-link" aria-hidden="true"></i></a>API と何かをつくるときの TIPS</h1>
+<h2 id="unity-で試行錯誤するのは大変"><a name="unity-で試行錯誤するのは大変" class="plugin-anchor" href="#unity-で試行錯誤するのは大変"><i class="fa fa-link" aria-hidden="true"></i></a>Unity で試行錯誤するのは大変</h2>
+<p>ここまでつないできましたが、Unity で C# を書きながら HTTP リクエストを試行錯誤するのは正直大変です。</p>
+<p>ですので、別のツールを使って成功させてから Unity に置き換えていくことがおススメです。</p>
+<h2 id="postman"><a name="postman" class="plugin-anchor" href="#postman"><i class="fa fa-link" aria-hidden="true"></i></a>Postman</h2>
+<p><a href="https://www.postman.com/" target="_blank">https://www.postman.com/</a></p>
+<p><img src="https://i.gyazo.com/1ae2334c8c9b4e6f6b26539fb665284d.png" alt="image"></p>
+<h2 id="node-red"><a name="node-red" class="plugin-anchor" href="#node-red"><i class="fa fa-link" aria-hidden="true"></i></a>Node-RED</h2>
+<p><a href="https://nodered.jp/" target="_blank">https://nodered.jp/</a></p>
+<p><img src="https://i.gyazo.com/6340fb604bf3dcddfbe58994d05a57d7.jpg" alt="image"></p>
+<p>JavaScript(node.js) でできている、少ないプログラムでブロックをつないで GUI で仕組みが作れるローコードツールで、ブラウザベースのエディタによってパレットに並ぶ多種多様なノードを結びつけて用意にフローを作成できます。もちろん、HTTP による API 接続にも強いです。</p>
+<p>私の場合は、Unity 開発時には、自分の PC にインストールしローカルホストの形で Unity からアクセスして色々な制作をやりやすくしています。</p>
+<h2 id="eneblar"><a name="eneblar" class="plugin-anchor" href="#eneblar"><i class="fa fa-link" aria-hidden="true"></i></a>eneblar</h2>
+<p><a href="https://www.enebular.com/ja/" target="_blank">https://www.enebular.com/ja/</a></p>
+<p><img src="https://i.gyazo.com/212ec86944d9389dc0864539749ba676.jpg" alt="image"></p>
+<p>今回も教材の一部で使っていました。Node-RED を外部サーバー配置できたり、実行できる環境を用意する仕組みが簡単に作れ巣ので</p>
+<h2 id="上級編--各社クラウドサービス"><a name="上級編--各社クラウドサービス" class="plugin-anchor" href="#上級編--各社クラウドサービス"><i class="fa fa-link" aria-hidden="true"></i></a>上級編 : 各社クラウドサービス</h2>
+<p><img src="https://i.gyazo.com/105b684fdc12d90b601a44365f741ce6.png" alt="image"></p>
+<p> AWS・GCP・Azure・IBM Cloud など各社クラウドサービスを利用すると、APIによって様々な機能を使うことができ、みなさんの Unity の仕組みをパワフルにサポートしてくれるでしょう。</p>
+<h2 id="質疑応答"><a name="質疑応答" class="plugin-anchor" href="#質疑応答"><i class="fa fa-link" aria-hidden="true"></i></a>質疑応答</h2>
+<p><img src="https://i.gyazo.com/aba8ccd625e7320883851b71ebd0caf2.png" alt="image"></p>
+<p>ここまでで質問があればどうぞ！</p>
+<h2 id="次にすすみましょう"><a name="次にすすみましょう" class="plugin-anchor" href="#次にすすみましょう"><i class="fa fa-link" aria-hidden="true"></i></a>次にすすみましょう</h2>
+<p>左のナビゲーションから「ディスカッション」にすすみましょう。</p>
 
                                 
                                 </section>
@@ -300,7 +323,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"API と何かをつくるときの TIPS","level":"1.7","depth":1,"next":{"title":"ディスカッション","level":"1.8","depth":1,"path":"07-extra-discussion.md","ref":"07-extra-discussion.md","articles":[]},"previous":{"title":"API を旅してみよう","level":"1.6","depth":1,"path":"05-api-tour.md","ref":"05-api-tour.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"バンタンゲームアカデミー 田中正吾 特別授業 【1年生向け】","language":"ja","gitbook":"*","description":"詳細説明"},"file":{"path":"06-api-tips.md","mtime":"2022-06-22T01:56:33.736Z","type":"markdown"},"gitbook":{"version":"3.7.3","time":"2022-06-22T02:02:29.862Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"API と何かをつくるときの TIPS","level":"1.7","depth":1,"next":{"title":"ディスカッション","level":"1.8","depth":1,"path":"07-extra-discussion.md","ref":"07-extra-discussion.md","articles":[]},"previous":{"title":"API を旅してみよう","level":"1.6","depth":1,"path":"05-api-tour.md","ref":"05-api-tour.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors","hide-published-with","copy-code-button","intopic-toc","back-to-top-button"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"intopic-toc":{"selector":".markdown-section h1, .markdown-section h2, .markdown-section h3, .markdown-section h4, .markdown-section h5, .markdown-section h6","mode":"nested","maxDepth":6,"isCollapsed":true,"isScrollspyActive":true,"visible":true,"label":"In this article"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-published-with":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"copy-code-button":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56},"embedFonts":false},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"バンタンゲームアカデミー 田中正吾 特別授業 【1年生向け】","language":"ja","gitbook":"*","description":"詳細説明"},"file":{"path":"06-api-tips.md","mtime":"2022-06-22T07:59:30.156Z","type":"markdown"},"gitbook":{"version":"3.7.3","time":"2022-06-22T08:00:04.236Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

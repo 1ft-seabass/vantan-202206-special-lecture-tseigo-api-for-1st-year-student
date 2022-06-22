@@ -1,6 +1,6 @@
 # Summary
 
-- [Introduction](README.md)
+- [README](README.md)
 - [はじめに、そしてAPI](01-getting-started.md)
 - [API で大切な HTTP](02-api-and-http.md)
 - [柴犬画像 API につなぐ](03-getting-shibainu-api.md)

@@ -2,7 +2,9 @@
 
 ## API の多くは HTTP プロトコルでできている
 
+![image](https://i.gyazo.com/f3373e4309a09576ba9ec8acce8a57c7.png)
 
+API の多くは HTTP プロトコルで構成されています。ですので、API を扱うときに読み解くために HTTP の仕組みを覚えておくと、実際に API を使いたいときに、ライブラリの力を借りずに、素の HTTP　通信でやりとりできるようになるので、幅が広がります。
 
 ## HTTP について
 
@@ -69,11 +71,52 @@ HTTP は Hypertext Transfer Protocol という正式名称です。 Web ブラ�
 
 ## Unity における HTTP 
 
+### Unity でつなげる公式ドキュメント
 
+- 共通操作 - HLAPI の使用 - Unity マニュアル
+  - https://docs.unity3d.com/ja/2019.4/Manual/UnityWebRequest-HLAPI.html
 
-## 今回は HTTP GET で 1 点突破します
+こちらに文献があります。
+
+### メジャーな GET と POST リクエストの文献
+
+GET リクエスト
+
+- HTTP サーバーからテキストやバイナリデータを取得 (GET) - Unity マニュアル
+  - https://docs.unity3d.com/ja/2019.4/Manual/UnityWebRequest-RetrievingTextBinaryData.html
+
+POST リクエスト例
+
+- HTTP サーバーにフォームを送信 (POST) - Unity マニュアル
+  - https://docs.unity3d.com/ja/2019.4/Manual/UnityWebRequest-SendingForm.html
+  - 参考にはなるが、最近のユースケースでは、必ずしもフォームでデータをやり取りするわけではないです
+- 【Unity】UnityWebRequest で JSON を POST 通信するサンプル - コガネブログ
+  - https://baba-s.hatenablog.com/entry/2020/11/16/080000_9
+  - JSON データを送るところではこちらのほうが参考になります
+
+### JSON データの送信や受け取ったデータの JSON 解析は JsonUtility
+
+JSON データの送信や受け取ったデータの JSON 解析は、Unity でビルドインされている JsonUtility が便利です。
+
+- JsonUtility-FromJson - Unity スクリプトリファレンス
+  - https://docs.unity3d.com/ja/2018.4/ScriptReference/JsonUtility.FromJson.html
+- JsonUtility-ToJson - Unity スクリプトリファレンス
+  - https://docs.unity3d.com/ja/2018.4/ScriptReference/JsonUtility.ToJson.html
+
+## 今回は HTTP GET で一点突破します
+
+![image](https://i.gyazo.com/d0f4ebb4d8d3c8988055d12191971876.png)
 
 次の章では、ブラウザで表示して確認もできる GET リクエストの API でサッと試してみます。
 
 柴犬画像をランダムで表示する API に Unity からつなぎます。
 
+## 質疑応答
+
+![image](https://i.gyazo.com/aba8ccd625e7320883851b71ebd0caf2.png)
+
+ここまでで質問があればどうぞ！
+
+## 次にすすみましょう
+
+左のナビゲーションから「柴犬画像 API につなぐ」にすすみましょう。

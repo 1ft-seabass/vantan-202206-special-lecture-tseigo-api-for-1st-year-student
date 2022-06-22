@@ -1,19 +1,30 @@
 # 柴犬画像 API につなぐ
 
-## 想定開発環境
+## 開発環境
 
 - Unity は 2019.4 台
 - スクリプトのエディタは Visual Studio
 
 で、すすめます。
 
-## Unity で HTTP をつなげる文献
+## 今回の API
 
-共通操作 - HLAPI の使用 - Unity マニュアル
-https://docs.unity3d.com/ja/2019.4/Manual/UnityWebRequest-HLAPI.html
+かわいい柴犬画像をランダムに返答してくれる shibe.online という API を使ってみましょう。
 
-HTTP サーバーからテキストやバイナリデータを取得 (GET) - Unity マニュアル
-https://docs.unity3d.com/ja/2019.4/Manual/UnityWebRequest-RetrievingTextBinaryData.html
+![image](https://i.gyazo.com/ffdaa58d8fb284e2d0095d4ba8f60d8b.png)
+
+https://shibe.online/ こちらです。
+
+HTTP リクエストの仕様として読み解くと以下のようになります。
+
+- HTTP リクエスト方法
+  - GET メソッド
+- アクセスする API の URL
+  - http://shibe.online/api/shibes
+- 3 つの柴犬画像を取得する場合のパラメータ付き URL
+  - http://shibe.online/api/shibes?count=3&urls=true&httpsUrls=true
+
+これのみです。追加で設定すべきパラメータもなく、これは、GET リクエストのためブラウザからアクセスでき、とても扱いやすい API です。
 
 ## Unity Hub で新しいプロジェクト
 
@@ -173,4 +184,14 @@ public class ShibainuAPILoader : MonoBehaviour
 
 ## ShibainuAPILoader プログラムの解説
 
-## 
+TODO : ShibainuAPILoader プログラムの解説
+
+## 質疑応答
+
+![image](https://i.gyazo.com/aba8ccd625e7320883851b71ebd0caf2.png)
+
+ここまでで質問があればどうぞ！
+
+## 次にすすみましょう
+
+左のナビゲーションから「API から柴犬画像を表示」にすすみましょう。
